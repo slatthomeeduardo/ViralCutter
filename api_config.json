@@ -1,0 +1,11 @@
+{
+    "selected_api": "gemini",
+    "gemini": {
+        "api_key": "",
+        "model": "gemini-flash-lite-latest",
+        "chunk_size": 20000
+    },
+    "g4f": {
+        "chunk_size": 2000
+    }
+}
