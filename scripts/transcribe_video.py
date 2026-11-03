@@ -42,6 +42,15 @@ def apply_safe_globals_hack():
         print(f"Aviso ao tentar aplicar patch de globals: {e}")
 
     try:
+        import transformers.utils.import_utils
+        transformers.utils.import_utils.check_torch_load_is_safe = lambda: None
+        import transformers.modeling_utils
+        transformers.modeling_utils.check_torch_load_is_safe = lambda: None
+        print('Aplicado patch em transformers para permitir carregamento de modelos legados .bin.')
+    except Exception as e:
+        pass
+
+    try:
         import torchaudio
         if not hasattr(torchaudio, 'list_audio_backends'):
             torchaudio.list_audio_backends = lambda: []

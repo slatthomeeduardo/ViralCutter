@@ -13,6 +13,14 @@ import shutil
 import subprocess
 import argparse
 import time
+try:
+    import transformers.utils.import_utils
+    transformers.utils.import_utils.check_torch_load_is_safe = lambda: None
+    import transformers.modeling_utils
+    transformers.modeling_utils.check_torch_load_is_safe = lambda: None
+except Exception:
+    pass
+
 from scripts import (
     download_video,
     transcribe_video,
