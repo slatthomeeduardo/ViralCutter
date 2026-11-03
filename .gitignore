@@ -47,7 +47,7 @@ models/*.onnx
 *.wav
 *.mp3
 *.aac
-temp_*/
+temp_*
 debug_*.log
 *.log
 
