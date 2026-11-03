@@ -1,3 +1,8 @@
+# PyTorch core (mantidos sincronizados na mesma versão para evitar erros no torchvision/nms)
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
+
 # Outras dependencias essenciais
 numpy<2.1.0
 g4f[all]
